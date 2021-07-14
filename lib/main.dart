@@ -30,15 +30,46 @@ class MyApp extends StatelessWidget {
         shadowColor: Colors.pink,
         leading: Text('lead'),
         actions: [
-          Text('Action 1'),
-          Text('Action 2'),
+          Icon(
+              Icons.settings,
+              color: Colors.red,
+              size: 32,
+            ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Icon(
+              Icons.settings,
+              color: Colors.white,
+              size: 32,
+            ),
+          ),
         ],
       ),
-      body: Container(
-        padding: EdgeInsets.all(20),
-        color: Colors.grey[350],
-        child: Text('CS310'),
+      body: Column(
+        //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          buildContainer(),
+          Text('Some text'),
+          Container(
+            height: 44,
+            width: 44,
+            color: Colors.red,
+          ),
+        ],
       ),
+    );
+  }
+
+  Container buildContainer() {
+    return Container(
+      //width: 100,
+      //height: 100,
+      padding: EdgeInsets.symmetric(vertical: 40, horizontal: 8),
+      margin: EdgeInsets.fromLTRB(8, 16, 0, 40),
+      color: Colors.grey[350],
+      child: Text('CS310 is fun',
+      textAlign: TextAlign.justify,),
     );
   }
 
